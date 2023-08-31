@@ -14,7 +14,7 @@ bootstrap version 4
 
 ## What's file structure of template ?
 
-We use MVC pattern in this template
+We use MVVM pattern in this template
 <br> which contain major three folders : <br>
 
 - Shared : which contain all folders that shared in project , Layouts and Model (which contain all interfaces you will use in project) also you can add the shared Components and Directives or Pipe <br>

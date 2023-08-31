@@ -11,4 +11,9 @@ export const routes: Routes = [
     path: 'show-image',
     component: ShowImageComponent,
   },
+  {
+    path: '',
+    redirectTo: 'add-image',
+    pathMatch: 'full',
+  },
 ];
