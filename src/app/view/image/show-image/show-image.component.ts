@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-show-image',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  // Now you can imported only what you need, instead of import all CommonModule,
+  //  i use *ngIf in template so i import it.
+  imports: [RouterModule, NgIf],
   templateUrl: './show-image.component.html',
   styleUrls: ['./show-image.component.css'],
 })
 export class ShowImageComponent implements OnInit {
-  constructor() {}
+  isReditected: any;
+  constructor(private routes: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.routes.queryParams.subscribe((res: any) => {
+      this.isReditected = res.isRedirected;
+    });
+  }
 }
