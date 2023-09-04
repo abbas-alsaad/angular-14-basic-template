@@ -7,11 +7,7 @@ import { User } from '../../shared/Model/user';
   providedIn: 'root',
 })
 export class AuthService {
-  //Only for demo purpose
-  authenticated = true;
-  // for Observable Data
-  // private userSubject = new BehaviorSubject<User>({ email: '', password: '' });
-  // user$ = this.userSubject.asObservable();
+  authenticated = false;
   constructor() {
     this.checkAuth();
   }
@@ -31,7 +27,6 @@ export class AuthService {
     ) {
       this.authenticated = true;
       localStorage.setItem('demo_login_status', 'true');
-      // this.userSubject.next(credentials); *observable Data*
       return of({}).pipe(delay(1000));
     }
     return throwError(() => 'unexpected error occured');

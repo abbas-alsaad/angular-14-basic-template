@@ -6,4 +6,9 @@ export const routes: Routes = [
     path: 'sign-in',
     component: SignInComponent,
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'sign-in',
+  },
 ];
